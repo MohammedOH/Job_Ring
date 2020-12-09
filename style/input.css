@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    color: #6a6f8c;
+    background: #c8c8c8;
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+.padding {
+    padding: 3rem !important
+}
+
+.card-block {
+    float: left;
+    padding: 1.25rem
+}
+
+.img {
+    width: 800px;
+    height: 750px;
+    border: thin;
+    padding-top: 90px;
+}
+
+h6 {
+    font-size: 14px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 3px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.m-b-20 {
+    margin-bottom: 20px;
+    padding-top: 100px;
+}
