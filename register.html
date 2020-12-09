@@ -14,19 +14,25 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Job Ring</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html#more">About us</a>
-                        </li>
-                    </ul>
-                </div>
+        <nav style=" height: 50px; border-radius: 0;" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="index.html">Job Ring</a>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                </ul>
+                <form style=" float: right;padding-top: 5px;" class="form-inline mt-2 mt-md-0">
+                    <input style=" float: right; width: 400px !important; padding-top:5px;" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </nav>
     </header>
@@ -89,10 +95,11 @@
         </div>
     </main>
 
-    <footer class="container">
-        <hr class="featurette-divider">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>&copy; 2020 Job Ring. &middot; <a href="privacy.html">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <footer>
+        <hr>
+      
+        <p style="text-align: center;">&copy; Job Ring. 2020 &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a>&middot;
+            <a href="contact-us.html">Contact Us</a></p>
     </footer>
 
 </body>
