@@ -23,8 +23,6 @@ $.ajax({
 
                         </ul>
                     </div>
-
-
                     <div class="info-candidate">
                         <p><strong><a href="candidate-profile.html?${this.std_id}">Click here to more detail...</a></strong></p>
                     </div>
@@ -79,8 +77,6 @@ $(document).on("click", ".page-link", function() {
 
                         </ul>
                     </div>
-
-
                     <div class="info-candidate">
                         <p><strong><a href="candidate-profile.html?${this.std_id}">Click here to more detail...</a></strong></p>
                     </div>
