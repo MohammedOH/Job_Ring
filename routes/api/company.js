@@ -4,7 +4,7 @@ const dbConn = require('../../db');
 
 // Get all companies
 router.get('/', (req, res) => {
-  dbConn.query('SELECT * FROM company', (qErr, result, qFields) => {
+  dbConn.query('SELECT c_id, name, email, country, city, phone, Details, video FROM company', (qErr, result, qFields) => {
     if (qErr) {
       return res.json({ message: 'Failed to get all companies!' });
     }
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 // Get single company
 router.get('/:id', (req, res) => {
-  const query = 'SELECT * FROM company where c_id = ?';
+  const query = 'SELECT c_id, name, email, country, city, phone, Details, video FROM company where c_id = ?';
 
   dbConn.query(query, [req.params.id], (qErr, result, qFields) => {
     if (qErr) {
@@ -99,6 +99,19 @@ router.delete('/:id', (req, res) => {
       return res.status(400).json({ message: `Failed to delete job with the id {${req.params.id}}!` });
     }
     res.json({ message: `Company with the id {${req.params.id}} was deleted successfully!`, result });
+  })
+});
+
+// Get company page
+router.get('/page/:page', (req, res) => {
+  dbConn.query(`SELECT c_id, name, email, country, city, phone, Details, video FROM company LIMIT 5 OFFSET ?;`, [req.params.page * 5], (qErr, result, qFields) => {
+    if (qErr)
+      return res.status(400).json({ message: `Failed to get page number ${req.params.page}!` });
+
+    if (!result || result.length == 0)
+      return res.status(400).json({ message: `Page ${req.params.page} is empty!` });
+
+    res.json({ message: `Company page {${req.params.page}} fetched!`, result });
   })
 });
 

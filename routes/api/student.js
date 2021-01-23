@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const dbConn = require('../../db');
 
-// Get all students
+// Get all students by page
 router.get('/', (req, res) => {
-  dbConn.query('SELECT * FROM student', (qErr, result, qFields) => {
+  dbConn.query('SELECT std_id, std_name, email, country, city, phone, picture, gender, birthdate, cv FROM student', (qErr, result, qFields) => {
     if (qErr) {
       return res.json({ message: 'Failed to get all students!' });
     }
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 // Get single job
 router.get('/:id', (req, res) => {
-  const query = 'SELECT * FROM student where std_id = ?';
+  const query = 'SELECT std_id, std_name, email, country, city, phone, picture, gender, birthdate, cv FROM student WHERE std_id = ?';
 
   dbConn.query(query, [req.params.id], (qErr, result, qFields) => {
     if (qErr) {
@@ -103,6 +103,20 @@ router.delete('/:id', (req, res) => {
       return res.status(400).json({ message: `Failed to delete student with the id {${req.params.id}}!` });
     }
     res.json({ message: `Student with the id {${req.params.id}} was deleted successfully!`, result });
+  })
+});
+
+
+// Get company page
+router.get('/page/:page', (req, res) => {
+  dbConn.query(`SELECT std_id, std_name, email, country, city, phone, picture, gender, birthdate, cv FROM student LIMIT 5 OFFSET ?;`, [req.params.page * 5], (qErr, result, qFields) => {
+    if (qErr)
+      return res.status(400).json({ message: `Failed to get page number ${req.params.page}!` });
+
+    if (!result || result.length == 0)
+      return res.status(400).json({ message: `Page ${req.params.page} is empty!` });
+
+    res.json({ message: `Student page {${req.params.page}} fetched!`, result });
   })
 });
 

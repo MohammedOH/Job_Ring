@@ -14,12 +14,13 @@ router.get('/', (req, res) => {
 
 // Get single job
 router.get('/:id', (req, res) => {
-  const query = 'SELECT * FROM job_offer where job_id = ?';
+  const query = 'SELECT c_id, job_id, job_title, description, video, date_posted, status, (SELECT job_type from job_type AS jt WHERE jt.jt_id = jo.job_type  LIMIT 1) AS job_type, salary, (SELECT COALESCE(JSON_ARRAYAGG((SELECT title FROM skill AS s WHERE s.s_id = js.s_id)), \'[]\') FROM  job_skills AS js WHERE js.job_id = jo.job_id AND js.c_id = jo.c_id) AS job_skills, (SELECT COUNT(*) FROM job_view AS jv WHERE jv.c_id = jo.c_id AND jv.job_id = jo.job_id) AS job_views FROM job_offer AS jo WHERE job_id = 1 ORDER BY date_posted desc, job_id = ?';
 
   dbConn.query(query, [req.params.id], (qErr, result, qFields) => {
     if (qErr) {
       res.status(400).json({ message: `Failed to get job with the id {${req.params.id}}!` });
     } else {
+      result[0].job_skills = JSON.parse(Buffer.from(result[0].job_skills).toString());
       res.json({ message: `Job offer with the id {${req.params.id}}`, result });
     }
   })
@@ -89,6 +90,23 @@ router.delete('/:id', (req, res) => {
       return res.status(400).json({ message: `Failed to delete job with the id {${req.params.id}}!` });
     }
     res.json({ message: `Job offer with the id {${req.params.id}} was deleted successfully!`, result });
+  })
+});
+
+// Get job page
+router.get('/page/:page', (req, res) => {
+  dbConn.query(`SELECT c_id, job_id, job_title, description, video, date_posted, status, (SELECT job_type from job_type AS jt WHERE jt.jt_id = jo.job_type  LIMIT 1) AS job_type, salary, (SELECT COALESCE(JSON_ARRAYAGG((SELECT title FROM skill AS s WHERE s.s_id = js.s_id)), '[]') FROM  job_skills AS js WHERE js.job_id = jo.job_id AND js.c_id = jo.c_id) AS job_skills, (SELECT COUNT(*) FROM job_view AS jv WHERE jv.c_id = jo.c_id AND jv.job_id = jo.job_id) AS job_views FROM job_offer AS jo ORDER BY date_posted desc, job_id LIMIT 5 OFFSET ?;`, [req.params.page * 5], (qErr, result, qFields) => {
+    if (qErr)
+      return res.status(400).json({ message: `Failed to get page number ${req.params.page}!` });
+
+    if (!result || result.length == 0)
+      return res.status(400).json({ message: `Page ${req.params.page} is empty!` });
+
+    for (let i in result) {
+      result[i].job_skills = JSON.parse(Buffer.from(result[i].job_skills).toString());
+    }
+
+    res.json({ message: `Job offers page {${req.params.page}} fetched!`, result });
   })
 });
 
