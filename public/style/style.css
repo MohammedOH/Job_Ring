@@ -1,231 +1,228 @@
 /*Panel tabs*/
-body {
-	background: #eee;
 
+body {
+    background: #eee;
 }
+
 
 /*Panel tabs*/
+
 .panel-tabs {
-	position: relative;
-	bottom: 30px;
-	clear: both;
-	border-bottom: 1px solid transparent;
+    position: relative;
+    bottom: 30px;
+    clear: both;
+    border-bottom: 1px solid transparent;
 }
 
-.panel-tabs > li {
-	float: left;
-	margin-bottom: -1px;
+.panel-tabs>li {
+    float: left;
+    margin-bottom: -1px;
 }
 
-.panel-tabs > li > a {
-	margin-right: 2px;
-	margin-top: 4px;
-	line-height: .85;
-	border: 1px solid transparent;
-	border-radius: 4px 4px 0 0;
-	color: #ffffff;
+.panel-tabs>li>a {
+    margin-right: 2px;
+    margin-top: 4px;
+    line-height: .85;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: #ffffff;
 }
 
-.panel-tabs > li > a:hover {
-	border-color: transparent;
-	color: #ffffff;
-	background-color: transparent;
+.panel-tabs>li>a:hover {
+    border-color: transparent;
+    color: #ffffff;
+    background-color: transparent;
 }
 
-.panel-tabs > li.active > a,
-.panel-tabs > li.active > a:hover,
-.panel-tabs > li.active > a:focus {
-	color: #fff;
-	cursor: default;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	background-color: rgba(255, 255, 255, .23);
-	border-bottom-color: transparent;
+.panel-tabs>li.active>a,
+.panel-tabs>li.active>a:hover,
+.panel-tabs>li.active>a:focus {
+    color: #fff;
+    cursor: default;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, .23);
+    border-bottom-color: transparent;
 }
 
 #main-wrapper {
-	width: 100%;
-	float: right
+    width: 100%;
+    float: right
 }
 
 #sidebar {
-	width: 28%;
-	padding: 10px;
-	border-right: solid 1px #eee;
-	border-bottom: solid 1px #428bca;
-	position: absolute;
-
+    width: 28%;
+    padding: 10px;
+    border-right: solid 1px #eee;
+    border-bottom: solid 1px #428bca;
+    position: absolute;
 }
 
 #col-md-6 col-md-offset-3 {
-	/*	width: 65% !important*/
+    /*	width: 65% !important*/
 }
 
 .model-box {
-	width: 100%;
-	height: 290px;
-	border: solid 1px #428bca;
-	padding: 5px;
-	margin-bottom: 15px;
-	overflow: hidden;
+    width: 100%;
+    height: 290px;
+    border: solid 1px #428bca;
+    padding: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
 }
 
-
 .card-product-grid .info-wrap {
-	overflow: hidden;
-	padding: 18px 20px;
+    overflow: hidden;
+    padding: 18px 20px;
 }
 
 [class*='card-product'] a.title {
-	color: #212529;
-	display: block;
+    color: #212529;
+    display: block;
 }
 
 .card-product-grid:hover .btn-overlay {
-	opacity: 1;
+    opacity: 1;
 }
 
 .card-product-grid .btn-overlay {
-	-webkit-transition: .5s;
-	transition: .5s;
-	opacity: 0;
-	left: 0;
-	bottom: 0;
-	color: #fff;
-	width: 100%;
-	padding: 5px 0;
-	text-align: center;
-	position: absolute;
-	background: rgba(0, 0, 0, 0.5);
+    -webkit-transition: .5s;
+    transition: .5s;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .img-wrap {
-	overflow: hidden;
-	position: relative;
+    overflow: hidden;
+    position: relative;
 }
 
 .icon-control {
-	margin-top: 5px;
-	float: right;
-	font-size: 80%;
+    margin-top: 5px;
+    float: right;
+    font-size: 80%;
 }
 
-
-
 .btn-light {
-	background-color: #fff;
-	border-color: #e4e4e4;
+    background-color: #fff;
+    border-color: #e4e4e4;
 }
 
 .list-menu {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
 }
 
 .list-menu a {
-	color: #343a40;
+    color: #343a40;
 }
 
 .title-sidebar {
-	height: 37px;
-	width: 100%;
-	color: #fff;
-	background-color: #428bca;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	padding: 8px;
-	font-size: 17px;
-	padding-left: 15px;
+    height: 37px;
+    width: 100%;
+    color: #fff;
+    background-color: #428bca;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 8px;
+    font-size: 17px;
+    padding-left: 15px;
 }
 
 .detail {
-	padding: 10px
+    padding: 10px
 }
 
 .image {
-	float: left;
-	width: 40%
+    float: left;
+    width: 40%
 }
 
 .views {
-	padding-left: 15px;
-	float: left;
+    padding-left: 15px;
+    float: left;
 }
 
 .desc-job {
-	float: left;
-	width: 50%;
-	overflow: hidden;
-
+    float: left;
+    width: 50%;
+    overflow: hidden;
 }
 
 .title-type {
-	overflow: hidden;
-	color: black;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+    overflow: hidden;
+    color: black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sub-title {
-	padding-right: 5px;
-	color: black;
-	font-weight: 600
+    padding-right: 5px;
+    color: black;
+    font-weight: 600
 }
 
-
 .number-views {
-	float: right;
-	padding-left: 8px;
+    float: right;
+    padding-left: 8px;
 }
 
 .skills-job {
-	display: inline-block;
-	background: #ddd;
-	margin: 0 auto;
-	padding: 14px;
-	border-radius: 100%;
-	font-size: 14px;
-	width: 59px;
-	text-align: center;
+    background: #ddd;
+    margin: 0 auto;
+    padding: 14px;
+    border-radius: 100%;
+    font-size: 14px;
+    width: 59px;
+    text-align: center;
+    display: inline-table;
+    margin-right: 5px;
 }
 
 .root-skill-job {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .info-company {
-	float: left;
-	padding-left: 37%;
+    float: left;
+    padding-left: 37%;
 }
 
-
-
 .title-type-comp {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 100px;
-	word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100px;
+    word-wrap: break-word;
 }
 
 .info-candidate {
-	float: left;
-	padding-top: 10%;
-	padding-left: 37%;
+    float: left;
+    padding-top: 10%;
+    padding-left: 37%;
 }
 
 .info-Recruiter {
-	float: left;
-	padding-top: 6.2%;
-	padding-left: 37%;
+    float: left;
+    padding-top: 6.2%;
+    padding-left: 37%;
 }
+
 .navbar navbar-expand-md navbar-dark fixed-top bg-dark {
     height: 50px !important;
 }
+
 a {
-  color: black;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
 }

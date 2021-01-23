@@ -7,6 +7,9 @@ $.ajax({
         var res = "";
 
         $(callback.result).each(function() {
+            let video = this.video;
+            video = video.replace("https://www.youtube.com/watch?v=", "https://www.youtube.com/embed/");
+            console.log(video);
             res += `<div class="container">
 
             <div class="main-body">
@@ -19,8 +22,8 @@ $.ajax({
                         <div class="card" style="margin-top: 10%">
                             <div class="card-body">
                                 <h3>About ${this.name}</h3>
-                                <iframe height="250em" width="100%" style="margin-top: 5%" src="${this.video}" allowfullscreen></iframe>
-                            </div>
+                                <iframe width="560" style=" width: 100%; height: 100%; " height="315" src="${video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
                         </div>
 
                     </div>
